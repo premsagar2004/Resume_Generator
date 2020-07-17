@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Upload Json</title>
+<style type="text/css">
+    .custom-file {
+        padding-top: 40px;
+    }
+
+    #id_file {
+        font-size: larger;
+</style>
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <br>
+
+            <center> <img src="{% static 'json-file-1-504451.png' %}" alt=""></center>
+            <br>
+            <div style="border: saddlebrown solid 5px; padding:50px; border-radius:20px">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {{ form|crispy }}<br>
+                    <center> <button class="btn btn-primary btn-lg col-4" style="border-radius: 100px">Upload</button>
+                    </center>
+                    <br>
+                    <div style="text-align: right"><small>*Choose Json file to upload.</small></div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

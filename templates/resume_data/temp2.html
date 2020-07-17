@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .col-8 {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+        .col-4 {
+            text-align: left;
+        }
+
+        .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2> <center style="font-size: 30px">Resume</center></h2>
+    {% if data %}
+    {% for k in data %}
+<br><br>
+<div class="row">
+        {% for item_1, item_2 in k.items %}
+
+    <div class="col-4"><span style="font-size: 20px;width: 100%">{{ item_1 }}</span>
+
+                {% if item_2.items %}
+                    {% for x,y  in item_2.items %}
+
+                    <span style="margin-left: 100px"><b>{{ x }}</b> : {{ y }} <br><br></span>
+
+                    {% endfor %}
+
+                    <hr style="background-color: black">
+
+                {% else %}
+
+                    {{ item_2 }}<br>
+
+             <hr style="background-color: black">
+
+                {% endif %}
+        <hr style="background-color: black">
+
+
+
+    </div>
+
+                    <hr style="background-color: black">
+
+        {% endfor %}
+
+    </div>            </div>
+
+    {% endfor %}
+{% endif %}
+</body>
+</html>

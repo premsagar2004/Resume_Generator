@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{#{% block head %}#}
+{#    <title>Resume Builder</title>#}
+{##}
+{##}
+{##}
+{#{% endblock %}#}
+{##}
+{#{% block body %}#}
+{##}
+{#<div class="container">#}
+
+
+{##}
+{#{% if data %}#}
+{#    {% for k in data %}#}
+{#<br><br>#}
+{#<div class="row justify-content-center">#}
+{#        {% for item_1, item_2 in k.items %}#}
+{##}
+{#    <div class="col-4"><h2>{{item_1 }}</h2><br><br>#}
+{#</div>#}
+{#    <div class="col-8" style="text-align: left">#}
+{#                {% if item_2.items %}#}
+{#                    {% for x,y  in item_2.items %}#}
+{##}
+{#                    <b>{{ x }}</b> : {{ y }} <br><br>#}
+{#                    {% endfor %}#}
+{##}
+{#                {% else %}#}
+{##}
+{#                    {{ item_2 }}<br>#}
+{##}
+{#                {% endif %}</div>#}
+{##}
+{##}
+{#        {% endfor %}#}
+{##}
+{#            </div>#}
+{##}
+{#    {% endfor %}#}
+{#{% endif %}#}
+{% block head %}
+
+<style type="text/css">
+.one{
+text-align: left
+}
+.two{
+font-size: 22px;background-color: #a0a2ad; padding: 15px
+}
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="one">
+
+{% if data %}
+    <BR>
+
+    <h1><center>RESUME</center></h1>
+
+    {% for k in data %}
+        {% for item_1, item_2 in k.items %}
+
+            <br>
+            <h1><div class="two"><b>{{ item_1 }}</b></div></h1>
+            <br>
+                {% if item_2.items %}
+                    {% for x,y  in item_2.items %}
+                        <div ></div>
+                    <b>{{ x }}</b> : {{ y }} <br><br>
+
+                    {% endfor %}
+                {% else %}
+
+                    {{ item_2 }}<br>
+
+                {% endif %}
+            <hr />
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+    </div>
+    </div>
+
+    <br>
+    <center><a href="{% url 'pdf1' %}" class="btn btn-primary btn-lg " style="border-radius: 100px">Convert To PDF</a></center>
+    <br><br><br>
+{% endblock %}

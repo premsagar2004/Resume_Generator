@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+    <title>Registration</title>
+
+{#<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">#}
+
+    <style type="text/css">
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+    .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+{##}
+{#    <br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>#}
+{#<hr>#}
+{##}
+<center>
+
+  <div class="card bg-light mt-5 mb-5" style="box-shadow: grey 10px 10px 15px 10px; width: 800px">
+<article class="card-body mx-auto" style="max-width: 600px; ">
+
+
+
+	<h3 class="card-title mt-3 text-center">Create Account</h3>
+	<p class="text-center">Get started with your free account</p>
+	<p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fa fa-twitter"></i>   Signup via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-official"></i>   Signup via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+
+
+	<form action="" method="post">
+
+        <div class="form-group">
+            {% if messages %}
+                <ul class="messages">
+                    {% for x in messages %}
+                        <div class="alert alert-danger">{{ x }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+    </div>
+
+
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="username" class="form-control" placeholder="Username" type="text" style="width: 450px">
+    </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="first_name" class="form-control" placeholder="First Name" type="text">
+    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="last_name" class="form-control" placeholder="Last Name" type="text">
+    </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="email" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="password1" class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="password2" class="form-control" placeholder="Repeat password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->
+    <p class="text-center">Have an account? <a href="{% url 'userLogin' %}">Log In</a> </p>
+{% csrf_token %}
+    </form>
+</article>
+</div> <!-- card.// -->
+</center>
+
+
+    </div>
+{% endblock %}

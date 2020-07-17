@@ -1,0 +1,48 @@
+[
+	{
+
+"FULL NAME" : "Lalchan Patel",
+
+"Address" : "National Institute of Technology Trichy",
+
+"Phone" : "6200749585",
+
+"Email" : "lalchanpatel@gmail.com",
+
+"Objective" : "Seeking a position at XYZ Company where I can maximize my quality assurance, program development, and training experience.",
+
+"Qualifications" :{
+					"graduation" : "R Lall College Nalanda   Mathematics    67.60%",
+					"Senior Secondary" : "M G S +2 High School Jhajha Mathematics 70%",
+				    "Secondary" : "B L S A High School Jhajha 79% "
+				  },
+
+
+"Projects" : {
+				"Smart KeyBoard Syatem" : "This Project provide various tools for text processing. It includes spelling correction, word completion, and all other various tools", 
+			    "LPG booking System" : " Using Database Management System it provide more security and on time delivry of gas cyllinder."
+			 },
+
+"Area of Intrest" : {
+						"1" : "Data Structures and Algorithms",
+						"2" : "Object Oriented Programming Concepts",
+					 	"3" : "Database Management System"
+					},
+
+"Technical Skills" : {
+						"Programming Languages" : "C,C++,Python",
+						"Operating System" : "Windows 10"
+					 },
+
+"Academic Achievements" : {
+							"1" : "Secured AIR 40 in NIMCET'18 (NIT MCA Common Entrance 2018)",
+						    "2" : "Secured AIR 35 in BHU-PET-2018 National Level MCA Entrance Exam"
+						  },
+
+"Extracurricular Activities" : {
+						    "1" : "Member, Public Relation Committee in VERSION'19(A National Level MCA Technical Symposium, NIT TRICHY)",
+						    "2" : "Participated in Choreo Nite, NITTFEST'19"
+						}
+
+}
+]

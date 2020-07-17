@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2> <center style="font-size: 60px">Resume</center></h2>
+    {% if data %}
+    {% for k in data %}
+<br><br>
+<div class="row">
+        {% for item_1, item_2 in k.items %}
+
+    <div class="col-4"><h2>{{item_1 }}</h2><br><br>
+
+    </div>
+
+    <div class="col-8" style="text-align: left">
+
+                {% if item_2.items %}
+                    {% for x,y  in item_2.items %}
+
+                    <b>{{ x }}</b> : {{ y }} <br><br>
+
+                    {% endfor %}
+
+
+
+                    <hr style="background-color: black">
+
+                {% else %}
+
+                    {{ item_2 }}<br>
+
+             <hr style="background-color: black">
+
+                {% endif %}
+        <hr style="background-color: black">
+
+
+
+    </div>
+
+                    <hr style="background-color: black">
+
+        {% endfor %}
+
+            </div>
+
+    {% endfor %}
+{% endif %}
+</div>
+
+    <br>
+    <center><a href="{% url 'pdf2' %}" class="btn btn-primary btn-lg " style="border-radius: 100px">Convert To PDF</a></center>
+    <br><br><br>
+
+{% endblock %}
