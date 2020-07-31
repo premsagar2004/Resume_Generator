@@ -42,6 +42,7 @@ def userLogin(request):
         if user is not None:
             auth.login(request, user)
             return redirect('home')
+            # messages.success(request, f' Welcome { username} you have successfully login! ')
 
         else:
             messages.error(request, 'Invalid Credentials!')

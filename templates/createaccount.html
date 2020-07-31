@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block createactive %}  active {% endblock createactive %}
+{% block title%}Create Your Resume{% endblock %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Create Account</title>
+</head>
+
+<body>
+  {% block body %}
+
+  <center><h2>Create Resume</h2></center>
+  {% load crispy_forms_tags %}
+  <img src="{% static 'json1.png' %}" width="150" height="400" class="img-fluid"
+     alt="Responsive image">
+     <h5>Please upload JSON file</h5>
+
+
+  <div style="border: saddlebrown solid 5px; padding: 50px; border-radius: 20px; width: 500px;
+  margin: auto;">
+    <form action="templates/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      {{ form|crispy }}
+      <!-- <input type="hidden" name="csrfmiddlewaretoken"
+        value="pksRZM5bBydOXhvkac5UTQYWnV0OucITZrsf6yyqowyqs6vgQ4L9l562jKEOJWko"> -->
+
+
+
+      <div id="div_id_file" class="form-group"> <label for="id_file" class=" requiredField">
+          File<span class="asteriskField">*</span> </label>
+        <div class="">
+          Currently: <a href="/media/document.json">document.json</a><br>
+          Change:
+          <input type="file" name="file" class="clearablefileinput form-control-file" id="id_file"> </div>
+      </div>
+      <br>
+      <center> <button class="btn btn-primary btn-lg col-4" style="border-radius: 100px">Upload</button></center>
+      <br>
+      <div style="text-align: right"><small>*Choose Json file to upload.</small></div>
+    </form>
+
+  </div>
+<br>
+<br>
+
+
+{% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

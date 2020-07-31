@@ -11,10 +11,12 @@ admin.site.index_title= "Welcome to ResumeGenerator"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('accounts/', include('accounts.urls')),
     path('', include('resume_data.urls')),
     path('templates/', include('resumeTemplates.urls')),
     path('api-auth/', include('rest_framework.urls'))
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()
