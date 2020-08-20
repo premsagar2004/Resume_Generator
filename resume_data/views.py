@@ -116,8 +116,21 @@ def contact(request):
         messages.success(request,"Your details successfully submited !" )
     return render(request, "contact.html")
 
+@login_required
 def createresume(request):
-    return render(request,'createaccount.html')
+    obj = JsonData.objects.get(user=request.user)
+    if request.method == 'POST':
+        form = FileForm(request.POST, request.FILES, instance=obj)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return render(request, 'templates1.html')
+            # messages.success(request, f' Welcome { username} you have successfully login! ')
+
+    form = FileForm(instance=obj)
+    return render(request, 'createaccount.html', {'form': form})
+    
 
 def templates(request):
     return render(request,'templates1.html')
